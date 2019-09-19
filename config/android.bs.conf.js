@@ -1,7 +1,7 @@
 const waitforTimeout = 360000;
 const curlModule = require('./curlModule');
-const password = 'd6n7zPHYzt29G4sqTLhG';
-const username = 'bsuser53510';
+const password = 'yzZ3FeeRuKEGrBeqMrvL';
+const username = 'vicromayria1';
 
 exports.config = {
     specs: [
