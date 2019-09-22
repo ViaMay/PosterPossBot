@@ -1,11 +1,13 @@
 const waitforTimeout = 360000;
 const curlModule = require('./curlModule');
-const password = 'yzZ3FeeRuKEGrBeqMrvL';
-const username = 'vicromayria1';
+const fs = require("fs");
+const obj = JSON.parse(fs.readFileSync("env.json", "utf8"));
+const username = obj.usernameBrowserstack;
+const password = obj.passwordBrowserstack;
 
 exports.config = {
     specs: [
-        './script/tests.js'
+        './core/tests.js'
     ],
     exclude: [],
     maxInstances: 1,

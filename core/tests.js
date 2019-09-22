@@ -1,9 +1,9 @@
-import startPage from '../core/StartPage';
-import Base from '../core/Base';
-import loginCompanyPage from '../core/LoginCompanyPage';
-import loginPage from '../core/LoginPage';
-import salePage from '../core/SalePage';
-import calendarPage from '../core/CalendarPage';
+import startPage from './StartPage';
+import Base from './Base';
+import loginCompanyPage from './LoginCompanyPage';
+import loginPage from './LoginPage';
+import salePage from './SalePage';
+import calendarPage from './CalendarPage';
 
 
 describe('script', () => {

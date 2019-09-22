@@ -1,6 +1,18 @@
 const fs = require("fs");
 const needle = require('needle');
 const tunnel = require('tunnel');
+const obj = JSON.parse(fs.readFileSync("env.json", "utf8"));
+const server = obj.server;
+const serverPort = obj.serverPort;
+const serverUserName = obj.serverUserName;
+const serverPassword = obj.serverPassword;
+
+const email = obj.email;
+const password = obj.password;
+const company = obj.company;
+
+const apiTelegrameKey = obj.apiTelegrameKey;
+const apiTelegramechatId = obj.apiTelegramechatId;
 
 export default class Base {
     static getMonth(value) {
@@ -35,13 +47,13 @@ export default class Base {
     static sendPhoto(photo) {
         let myAgent = tunnel.httpsOverHttp({
             proxy: {
-                host: Base.server,
-                port: Base.serverPort,
-                proxyAuth: Base.serverUserName + ':' + Base.serverPassword,
+                host: server,
+                port: serverPort,
+                proxyAuth: serverUserName + ':' + serverPassword,
             }
         });
         let data = {
-            chat_id: Base.apiTelegramechatId,
+            chat_id: apiTelegramechatId,
             photo: fs.readFileSync(photo)
         };
 
@@ -50,16 +62,9 @@ export default class Base {
             agent: myAgent
         };
 
-        return needle.post('https://api.telegram.org/bot' + Base.apiTelegrameKey + '/sendPhoto', data, options);
+        return needle.post('https://api.telegram.org/bot' + apiTelegrameKey + '/sendPhoto', data, options);
     }
 }
-
-Base.email = 'info@dataroot.ru';
-Base.password = '1234qweR';
-Base.company = 'obnyal02';
-Base.apiTelegrameKey = '879787453:AAHtgq_sivWNBZ3TybePNMIqDSGA1vuBDRk';
-Base.apiTelegramechatId = '-1001311780422';
-Base.server = '45.91.160.165';
-Base.serverPort = 2429;
-Base.serverUserName = 'user28804';
-Base.serverPassword = 'm40rtq';
+    Base.email = email;
+    Base.password = password;
+    Base.company = company;

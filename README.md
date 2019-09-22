@@ -11,20 +11,25 @@
 
 
 Настройки:
-1) в файле config/android.bs.conf.js есть переменные:
-const password = 'd6n7zPHYzt29G4sqTLhG';
-const username = 'bsuser53510';
+1) в файле cenv.json есть переменные:
+passwordBrowserstack = 'd6n7zPHYzt29G4sqTLhG';
+usernameBrowserstack = 'bsuser53510';
 
-В них указывается данные из browserstack для аккаунта. На browserstack если создать нового пользователя даётся 100 минут бесплатно
+В них указывается данные из browserstack для аккаунта. На browserstack если создать нового пользователя даётся 100 минут бесплатного времени.
 Чтобы поменять пользователя надо зайти https://automate.browserstack.com/dashboard и скопировать значения из полей: Username and Access Keys
 
-2) В Файле core/Base.js внизу есть настройки:
-Base.email = 'info@dataroot.ru'; - емейл пользователя
-Base.password = '1234qweR'; - его паспорт
-Base.company = 'obnyal02'; - его компания
-Base.apiTelegrameKey = '879787453:AAHtgq_sivWNBZ3TybePNMIqDSGA1vuBDRk'; - ключ от бота телеграма для апи.
-Base.apiTelegramechatId = '-1001311780422'; - Id чата, в который шлётся сообщение.
-Base.server = '45.91.160.165'; - сервер для прокси.
-Base.serverPort = 2429; - порт для прокси.
-Base.serverUserName = 'user28804'; - юзер для прокси.
-Base.serverPassword = 'm40rtq'; - пароль юзера для прокси.
+2) В Файле env.json есть переменные:
+Для прилодения:
+email = 'info@dataroot.ru'; - емейл пользователя.
+password = '1234qweR'; - его пароль.
+company = 'obnyal02'; - его компания.
+
+Для Телеграма:
+apiTelegrameKey = '879787453:AAHtgq_sivWNBZ3TybePNMIqDSGA1vuBDRk'; - ключ от бота телеграма для апи.
+apiTelegramechatId = '-1001311780422'; - Id чата, в который шлётся сообщение.
+
+Для Апи:
+server = '45.91.160.165'; - сервер для прокси.
+serverPort = 2429; - порт для прокси.
+serverUserName = 'user28804'; - юзер для прокси.
+serverPassword = 'm40rtq'; - пароль юзера для прокси.
