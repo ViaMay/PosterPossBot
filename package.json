@@ -13,11 +13,11 @@
     "system-sleep": "1.3.6",
     "tunnel": "0.0.6",
     "webdriverio": "4.14.4",
-    "wdio-mocha-framework": "0.6.4"
-  },
-  "devDependencies": {
+    "wdio-mocha-framework": "0.6.4",
     "babel-cli": "6.26.0",
     "babel-preset-es2015": "6.24.1",
     "wdio-appium-service": "0.2.3"
+  },
+  "devDependencies": {
   }
 }
