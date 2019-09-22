@@ -9,8 +9,9 @@ const serverUserName = obj.serverUserName;
 const serverPassword = obj.serverPassword;
 
 
-module.exports = (username, password, waitforTimeout) => {
-    let myAgent = tunnel.httpsOverHttp({
+module.exports = curlModule =  {
+    sendFile(username, password, waitforTimeout){
+        let myAgent = tunnel.httpsOverHttp({
         proxy: {
             host: server,
             port: serverPort,
@@ -38,7 +39,7 @@ module.exports = (username, password, waitforTimeout) => {
         if (error) throw new Error(error);
         response = resp.body;
         console.log(resp.body);
-        });
+    });
 
     let i = 0;
     while(true) {
@@ -51,5 +52,7 @@ module.exports = (username, password, waitforTimeout) => {
         console.log(i);
         console.log(response.body);
     }
+    }
 };
+
 

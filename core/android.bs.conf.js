@@ -12,7 +12,7 @@ exports.config = {
     exclude: [],
     maxInstances: 1,
     capabilities: [{
-        app:  curlModule(username, password, waitforTimeout).app_url,
+        app:  curlModule.sendFile(username, password, waitforTimeout).app_url,
         device : 'Google Nexus 6',
         os_version : '6.0',
         build: 'Node Android',
@@ -37,10 +37,5 @@ exports.config = {
         compilers: ['js:babel-register'],
         ui: 'bdd',
         timeout: waitforTimeout
-    },
-    before: () => {
-        let chai = require('chai');
-        global.expect = chai.expect;
-        chai.expect();
     }
 };
