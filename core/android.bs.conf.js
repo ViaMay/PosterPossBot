@@ -32,6 +32,8 @@ exports.config = {
     logLevel: 'verbose',
     coloredLogs: true,
     waitforTimeout: waitforTimeout,
+    connectionRetryTimeout: waitforTimeout,
+    connectionRetryCount: 3,
     framework: 'mocha',
     mochaOpts: {
         compilers: ['js:babel-register'],
