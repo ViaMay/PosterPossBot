@@ -9,8 +9,8 @@ const serverUserName = obj.serverUserName;
 const serverPassword = obj.serverPassword;
 
 
-module.exports = curlModule =  {
-    sendFile(username, password, waitforTimeout){
+module.exports =  {
+    sendFile : function (username, password, waitforTimeout){
         let myAgent = tunnel.httpsOverHttp({
         proxy: {
             host: server,

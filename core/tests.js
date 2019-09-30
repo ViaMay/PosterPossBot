@@ -7,7 +7,7 @@ import calendarPage from './CalendarPage';
 
 describe('test',  function() {
     it('test', function() {
-        this.retries(3);
+      this.retries(3);
       let now = new Date();
       let day = now.getDate();
       let year = now.toLocaleString("en-US", {year: 'numeric'});
